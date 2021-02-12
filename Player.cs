@@ -9,6 +9,7 @@ namespace RPSLS
     abstract class Player
     {
         public List<string> GestureOptions;
+        public string ChosenGesture; 
         public int score;
         public Player()
         {
