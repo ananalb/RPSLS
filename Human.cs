@@ -12,11 +12,11 @@ namespace RPSLS
         {
             //user input for gesture
             Console.WriteLine("Select your gesture from the list below");
-            Console.WriteLine("1. Rock");
-            Console.WriteLine("2. Paper");
-            Console.WriteLine("3. Scissors");
-            Console.WriteLine("4. Lizard");
-            Console.WriteLine("5. Spock");
+            Console.WriteLine("Rock");
+            Console.WriteLine("Paper");
+            Console.WriteLine("Scissors");
+            Console.WriteLine("Lizard");
+            Console.WriteLine("Spock");
            
             string chosenOption = Console.ReadLine();
             chosenOption.ToLower();
@@ -24,19 +24,19 @@ namespace RPSLS
             
                 switch (chosenOption)
                 {
-                    case "1":
+                    case "Rock":
                     ChosenGesture = GestureOptions[0];
                         break;
-                    case "2":
+                    case "Paper":
                     ChosenGesture = GestureOptions[1];
                     break;
-                    case "3":
+                    case "Scissors":
                     ChosenGesture = GestureOptions[2];
                     break;
-                    case "4":
+                    case "Lizard":
                     ChosenGesture = GestureOptions[3];
                     break;
-                    case "5":
+                    case "Spock":
                     ChosenGesture = GestureOptions[4];
                     break;
                     default:
