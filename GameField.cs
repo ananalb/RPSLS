@@ -48,9 +48,8 @@ namespace RPSLS
 
         public void CompareGestures()
         {
-            player1.score = 0;
-            player2.score = 0;
-            //2  //0
+            
+           
             while (player1.score < 2 && player2.score < 2)
                
             {
@@ -121,9 +120,8 @@ namespace RPSLS
             playAgain.ToLower();
             if (playAgain == "Yes")
             {
-                player1.ChooseGesture();
-                player2.ChooseGesture();
-                //CompareGestures();
+               
+                CompareGestures();
                 DisplayWinner();
             }
             else

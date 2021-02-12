@@ -28,14 +28,17 @@ namespace RPSLS
                     ChosenGesture = GestureOptions[0];
                         break;
                     case "2":
-                        break;
+                    ChosenGesture = GestureOptions[1];
+                    break;
                     case "3":
-                        break;
+                    ChosenGesture = GestureOptions[2];
+                    break;
                     case "4":
-
-                        break;
+                    ChosenGesture = GestureOptions[3];
+                    break;
                     case "5":
-                        break;
+                    ChosenGesture = GestureOptions[4];
+                    break;
                     default:
                         Console.WriteLine("Please try again and select an option to begin the game");
                         break;
