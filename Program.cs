@@ -17,7 +17,7 @@ namespace RPSLS
             game.DisplayRules();
             game.CompareGestures();
             game.DisplayWinner();
-            game.PlayAgain();
+            //game.PlayAgain();
             Console.ReadLine();
         }
     }
