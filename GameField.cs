@@ -8,27 +8,40 @@ namespace RPSLS
 {
     class GameField
     {
-    }
 
-    public void Welcome()
-    {
-        Console.WriteLine("Welcome! Would you like to face off another human or a computer?");
-        string userInput = Console.ReadLine();
-        Console.WriteLine("1. HUMAN");
-        Console.WriteLine("2. COMPUTER");
-        string chosenOption = Console.ReadLine();
+        Player player1;
+        Player player2;
 
-        switch (chosenOption)
+        public GameField()
         {
-            case "1":
-                break;
-            case "2":
-                break;
-            default:
-                Console.WriteLine("Please try again and select an option");
-                break;
+            
         }
+        public void Welcome()
+        {
+            Console.WriteLine("Welcome! Would you like to face off another human or a computer?");
+            //string userInput = Console.ReadLine();
+            Console.WriteLine("1. HUMAN");
+            Console.WriteLine("2. COMPUTER");
+            string chosenOption = Console.ReadLine();
 
+            switch (chosenOption)
+            {
+                case "1":
+                    player1 = new Human();
+                    player2 = new Human();
+                    break;
+                case "2":
+                    player1 = new Human();
+                    player2 = new Computer();
+                    break;
+                default:
+                    Console.WriteLine("Please try again and select an option");
+                    break;
+            }
+            //example
+            player1.ChooseGesture();
+            player2.ChooseGesture();
+        }
         public void DisplayRules()
         {
             Console.WriteLine("Choose rock , paper, scissors, lizard, or spock - the strongest wins!");

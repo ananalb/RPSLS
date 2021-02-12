@@ -21,5 +21,10 @@ namespace RPSLS
         }
 
         public abstract void ChooseGesture();
+
+        public void GiveOptions()
+        {
+          
+        }
     }
 }
