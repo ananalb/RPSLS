@@ -11,7 +11,7 @@ namespace RPSLS
         public override void ChooseGesture()
         {
             //user input for gesture
-            Console.WriteLine("Please pick your gesture from the below list of gestures");
+            Console.WriteLine("Pick your gesture from the list below");
             GiveOptions();
             string chosenOption = Console.ReadLine();
             chosenOption.ToLower();

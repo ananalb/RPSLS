@@ -9,7 +9,6 @@ namespace RPSLS
     class Computer : Player
     
     {
-
         Random rand; 
         public Computer()
         {

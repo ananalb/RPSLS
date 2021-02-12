@@ -14,12 +14,11 @@ namespace RPSLS
 
         public GameField()
         {
-            
+
         }
         public void Welcome()
         {
             Console.WriteLine("Welcome! Would you like to face off another human or a computer?");
-            //string userInput = Console.ReadLine();
             Console.WriteLine("1. HUMAN");
             Console.WriteLine("2. COMPUTER");
             string chosenOption = Console.ReadLine();
@@ -38,15 +37,28 @@ namespace RPSLS
                     Console.WriteLine("Please try again and select an option");
                     break;
             }
-            //example
-            player1.ChooseGesture();
-            player2.ChooseGesture();
+
+
         }
         public void DisplayRules()
         {
             Console.WriteLine("Choose rock , paper, scissors, lizard, or spock - the strongest wins!");
         }
 
+        public void CompareGestures()
+        {
+            int remainingRounds = 3;
+        
+         while(remainingRounds > 0)
+            player1.ChooseGesture();
+            player2.ChooseGesture();
+            {
+                if()
+            }
+
+            remainingRounds--;
+
+        }
         public void PlayAgain()
         {
             Console.WriteLine("Would you like to play again?");
@@ -61,6 +73,7 @@ namespace RPSLS
 
             }
 
+           
 
         }
     }

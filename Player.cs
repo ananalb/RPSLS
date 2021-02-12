@@ -12,11 +12,7 @@ namespace RPSLS
         public int score;
         public Player()
         {
-            GestureOptions.Add("Rock");
-            GestureOptions.Add("Paper");
-            GestureOptions.Add("Scissors");
-            GestureOptions.Add("Lizard");
-            GestureOptions.Add("Spock");
+            GestureOptions = new List<string>();
             score = 0;
         }
 
@@ -24,7 +20,11 @@ namespace RPSLS
 
         public void GiveOptions()
         {
-          
+            GestureOptions.Add("Rock");
+            GestureOptions.Add("Paper");
+            GestureOptions.Add("Scissors");
+            GestureOptions.Add("Lizard");
+            GestureOptions.Add("Spock");
         }
     }
 }
