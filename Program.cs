@@ -10,11 +10,13 @@ namespace RPSLS
     {
         static void Main(string[] args)
         {
+            Computer computer = new Computer();
+            computer.ChooseGesture();
             GameField game = new GameField();
             game.Welcome();
             game.DisplayRules();
             
-            game.CompareGestures();
+            //game.CompareGestures();
             game.DisplayWinner();
             game.PlayAgain();
             Console.ReadLine();

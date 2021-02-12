@@ -46,15 +46,24 @@ namespace RPSLS
             Console.WriteLine("Choose rock , paper, scissors, lizard, or spock - the strongest wins!");
         }
 
-        public void CompareGestures()
+        public void CompareGestures(int index, Human human, Computer computer)
         {
             int remainingRounds = 3;
 
             while (remainingRounds > 0)
+               
+            {
                 player1.ChooseGesture();
                 player2.ChooseGesture();
-            {
-                //if ()
+                if (human.GestureOptions.Contains("rock"))
+                 { 
+
+                
+                    Console.WriteLine("Rock crushes Lizard");
+                    player1.score++;
+                }
+                    
+                    
             }
             PlayAgain();
             remainingRounds--;
@@ -69,7 +78,7 @@ namespace RPSLS
             {
                 player1.ChooseGesture();
                 player2.ChooseGesture();
-                CompareGestures();
+                //CompareGestures();
                 DisplayWinner();
             }
             else

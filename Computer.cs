@@ -19,12 +19,9 @@ namespace RPSLS
         {
 
             //randomly getting gesture
-            rand.Next(GestureOptions.Count);
-            Console.WriteLine(GestureOptions[0]);
-            Console.WriteLine(GestureOptions[1]);
-            Console.WriteLine(GestureOptions[2]);
-            Console.WriteLine(GestureOptions[3]);
-            Console.WriteLine(GestureOptions[4]);
+            int gesture = rand.Next(GestureOptions.Count);
+            Console.WriteLine(GestureOptions[gesture]);
+          
             Console.ReadLine();
 
 

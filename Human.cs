@@ -12,8 +12,8 @@ namespace RPSLS
         {
             //user input for gesture
             Console.WriteLine("Select your gesture from the list below");
-            Console.WriteLine("1 Rock");
-            Console.WriteLine("2 Paper");
+            Console.WriteLine("1. Rock");
+            Console.WriteLine("2. Paper");
             Console.WriteLine("3. Scissors");
             Console.WriteLine("4. Lizard");
             Console.WriteLine("5. Spock");
@@ -38,9 +38,6 @@ namespace RPSLS
                         Console.WriteLine("Please try again and select an option to begin the game");
                         break;
                 }
-            
-
-
         }
     }
 }
