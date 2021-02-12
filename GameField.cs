@@ -11,10 +11,11 @@ namespace RPSLS
 
         Player player1;
         Player player2;
+       
 
         public GameField()
         {
-
+            
         }
         public void Welcome()
         {
@@ -48,14 +49,14 @@ namespace RPSLS
         public void CompareGestures()
         {
             int remainingRounds = 3;
-        
-         while(remainingRounds > 0)
-            player1.ChooseGesture();
-            player2.ChooseGesture();
-            {
-                if()
-            }
 
+            while (remainingRounds > 0)
+                player1.ChooseGesture();
+                player2.ChooseGesture();
+            {
+                //if ()
+            }
+            PlayAgain();
             remainingRounds--;
 
         }
@@ -64,15 +65,31 @@ namespace RPSLS
             Console.WriteLine("Would you like to play again?");
             string playAgain = Console.ReadLine();
             playAgain.ToLower();
-            if (playAgain == "YES")
+            if (playAgain == "Yes")
             {
-
+                player1.ChooseGesture();
+                player2.ChooseGesture();
+                CompareGestures();
+                DisplayWinner();
             }
             else
             {
-
+                Console.WriteLine("Thank you for playing");
             }
 
+        }
+        public void DisplayWinner()
+        {
+            
+            if (player1.score > player2.score)
+            {
+                Console.WriteLine("Player one wins");
+            }
+            else
+            {
+                Console.WriteLine("Player two wins");
+            }
+            
            
 
         }
