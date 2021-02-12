@@ -13,6 +13,7 @@ namespace RPSLS
             GameField game = new GameField();
             game.Welcome();
             game.DisplayRules();
+            
             game.CompareGestures();
             game.DisplayWinner();
             game.PlayAgain();

@@ -13,18 +13,16 @@ namespace RPSLS
         public Player()
         {
             GestureOptions = new List<string>();
-            score = 0;
-        }
-
-        public abstract void ChooseGesture();
-
-        public void GiveOptions()
-        {
             GestureOptions.Add("Rock");
             GestureOptions.Add("Paper");
             GestureOptions.Add("Scissors");
             GestureOptions.Add("Lizard");
             GestureOptions.Add("Spock");
+            score = 0;
         }
+
+        public abstract void ChooseGesture();        
+                  
+        
     }
 }
