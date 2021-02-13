@@ -48,8 +48,6 @@ namespace RPSLS
 
         public void CompareGestures()
         {
-            
-
             while (player1.score < 2 && player2.score < 2)
             {
                 
@@ -59,14 +57,13 @@ namespace RPSLS
                 { 
                     Console.WriteLine("Rock crushes Lizard");
                     player1.score++;
-                }
+                }              
                
                 if (player1.ChosenGesture == "Rock" && player2.ChosenGesture == "Scissors")
                 {
                     Console.WriteLine("Rock crushes Scissors");
                     player1.score++;
-                }
-               
+                }              
                 if (player1.ChosenGesture == "Paper" && player2.ChosenGesture == "Spock")
                 {
                     Console.WriteLine("Paper disproves Spock");

@@ -18,11 +18,11 @@ namespace RPSLS
         public override void ChooseGesture()
         {
 
-            //randomly getting gesture
-            int gesture = rand.Next(GestureOptions.Count); //rand gives out a number
+            //randomly getting gesture for computer
+            int gesture = rand.Next(GestureOptions.Count);
             //Console.WriteLine(GestureOptions[gesture]);
             ChosenGesture = GestureOptions[gesture];
-            Console.ReadLine();
+            //Console.ReadLine();
 
 
 
