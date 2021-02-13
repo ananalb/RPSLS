@@ -61,7 +61,7 @@ namespace RPSLS
                     player1.score++;
                 }
                
-                else if (player1.ChosenGesture == "Rock" && player2.ChosenGesture == "Scissors")
+                if (player1.ChosenGesture == "Rock" && player2.ChosenGesture == "Scissors")
                 {
                     Console.WriteLine("Rock crushes Scissors");
                     player1.score++;
@@ -109,11 +109,6 @@ namespace RPSLS
                     Console.WriteLine("Spock vaporizes Rock");
                     player1.score++;
                 }
-                else
-                {
-                    Console.WriteLine("no");
-                }
-
 
             }
             DisplayWinner();
@@ -127,8 +122,8 @@ namespace RPSLS
             Console.WriteLine("1. Yes");
             Console.WriteLine("2. No");
             string playAgain = Console.ReadLine();
-            playAgain.ToLower();
-            if (playAgain == "1")
+            int response = Convert.ToInt32(playAgain);
+            if (response == 1)
             {
                 
                 CompareGestures();            
