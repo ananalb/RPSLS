@@ -128,6 +128,7 @@ namespace RPSLS
             }
             else
             {
+                
                 CompareGestures();
             }
         }
