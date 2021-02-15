@@ -106,10 +106,12 @@ namespace RPSLS
                     Console.WriteLine("Spock vaporizes Rock");
                     player1.score++;
                 }
+                else
+                {
+                    player2.score++;
+                }
 
-            }
-            DisplayWinner();
-            PlayAgain();
+            }          
             
 
         }
@@ -118,19 +120,23 @@ namespace RPSLS
             Console.WriteLine("Would you like to play again?");
             Console.WriteLine("1. Yes");
             Console.WriteLine("2. No");
-            string playAgain = Console.ReadLine();
-            int response = Convert.ToInt32(playAgain);
-            if (response == 1)
+            string response = Console.ReadLine();
+            int playAgain = Convert.ToInt32(response);
+            switch (playAgain)
             {
-                
-                CompareGestures();            
+                case 1:
+                    CompareGestures();
+                    break;
+                case 2:
+                    Console.WriteLine("Thank you for playing");
+                    break;
+                default:
+                    Console.WriteLine("Please pick a valid option");
+                    break;
+                    
             }
-            else
-            {
-                Console.WriteLine("Thank you for playing");
-            }
-
         }
+        
         public void DisplayWinner()
         {
             

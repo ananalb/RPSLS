@@ -19,8 +19,6 @@ namespace RPSLS
             Console.WriteLine("5. Spock");
 
             string chosenOption = Console.ReadLine();
-            chosenOption.ToLower();
-
 
             switch (chosenOption)
             {
