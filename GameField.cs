@@ -122,18 +122,13 @@ namespace RPSLS
             Console.WriteLine("2. No");
             string response = Console.ReadLine();
             int playAgain = Convert.ToInt32(response);
-            switch (playAgain)
+            if (playAgain != 1)
             {
-                case 1:
-                    CompareGestures();
-                    break;
-                case 2:
-                    Console.WriteLine("Thank you for playing");
-                    break;
-                default:
-                    Console.WriteLine("Please pick a valid option");
-                    break;
-                    
+                Console.WriteLine("Thanks for playing");
+            }
+            else
+            {
+                CompareGestures();
             }
         }
         

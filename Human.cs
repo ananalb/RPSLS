@@ -41,7 +41,6 @@ namespace RPSLS
                     Console.WriteLine("Please try again and select an option to begin the game");
                     break;
 
-
             }
 
         }
