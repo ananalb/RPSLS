@@ -17,33 +17,51 @@ namespace RPSLS
         {
             
         }
-        public void Welcome()
+
+
+        public void RunGame()
         {
-            Console.WriteLine("Welcome! Would you like to face off another human or a computer?");
-            Console.WriteLine("1. HUMAN");
-            Console.WriteLine("2. COMPUTER");
-            string chosenOption = Console.ReadLine();
+            Welcome();
+            DisplayRules();
+            CompareGestures();
+            DisplayWinner();
+            PlayAgain();
+            CompareGestures();
+        }
+        public void Welcome()
 
-            switch (chosenOption)
+        {
+            bool userSelection = true;
+            while (userSelection)
             {
-                case "1":
-                    player1 = new Human();
-                    player2 = new Human();
-                    break;
-                case "2":
-                    player1 = new Human();
-                    player2 = new Computer();
-                    break;
-                default:
-                    Console.WriteLine("Please try again and select an option");
-                    break;
+                Console.WriteLine("Welcome! Would you like to face off another human or a computer?");
+                Console.WriteLine("Press 1 for Human");
+                Console.WriteLine("Press 2 for Computer");
+                string input = Console.ReadLine();
+
+                {
+                    switch (input)
+                    {
+                        case "1":
+                            player1 = new Human();
+                            player2 = new Human();
+                            break;
+
+                        case "2":
+                            player1 = new Human();
+                            player2 = new Computer();
+                            break;
+                        default:
+                            Console.WriteLine("Please try again and select an option");
+                            break;
+                    }
+
+                }
             }
-
-
         }
         public void DisplayRules()
         {
-            Console.WriteLine("Choose rock , paper, scissors, lizard, or spock - the strongest wins!");
+            Console.WriteLine("Choose Rock , Paper, Scissors, Lizard, or Spock - the strongest wins!");
         }
 
         public void CompareGestures()
@@ -66,6 +84,17 @@ namespace RPSLS
                                 Console.WriteLine("Rock crushes Scissors");
                                 player1.score++;
                                 break;
+                            case "Paper":
+                                Console.WriteLine("Paper covers Rock");
+                                player2.score++;
+                                break;
+                            case "Spock":
+                                Console.WriteLine("Spock Vaporizes Rock");
+                                player2.score++;
+                                break;
+                            case "Rock":
+                                Console.WriteLine("It's a tie!");
+                                break;
                             default:
                                 break;
                         }
@@ -73,13 +102,24 @@ namespace RPSLS
                     case "Paper":
                         switch (player2.ChosenGesture)
                         {
-                            case "Spock":
-                                Console.WriteLine("Paper disproves Spock");
-                                player1.score++;
+                            case "Lizard":
+                                Console.WriteLine("Lizard eats Paper");
+                                player2.score++;
+                                break;
+                            case "Scissors":
+                                Console.WriteLine("Scissors cuts Paper");
+                                player2.score++;
                                 break;
                             case "Rock":
                                 Console.WriteLine("Paper covers Rock");
                                 player1.score++;
+                                break;
+                            case "Spock":
+                                Console.WriteLine("Paper disproves Spock");
+                                player1.score++;
+                                break;
+                            case "Paper":
+                                Console.WriteLine("It's a tie!");
                                 break;
                             default:
                                 break;
@@ -88,13 +128,24 @@ namespace RPSLS
                     case "Scissors":
                         switch (player2.ChosenGesture)
                         {
+                            case "Lizard":
+                                Console.WriteLine("Scissors decapitates Lizard");
+                                player1.score++;
+                                break;
+                            case "Rock":
+                                Console.WriteLine("Rock crushes Scissors");
+                                player2.score++;
+                                break;
                             case "Paper":
                                 Console.WriteLine("Scissors cuts Paper");
                                 player1.score++;
                                 break;
-                            case "Lizard":
-                                Console.WriteLine("Scissors decapitates Lizard");
-                                player1.score++;
+                            case "Spock":
+                                Console.WriteLine("Spock smashes Scissors");
+                                player2.score++;
+                                break;
+                            case "Scissors":
+                                Console.WriteLine("It's a tie!");
                                 break;
                             default:
                                 break;
@@ -103,13 +154,24 @@ namespace RPSLS
                     case "Lizard":
                         switch (player2.ChosenGesture)
                         {
+                            case "Rock":
+                                Console.WriteLine("Rock crushes Lizard");
+                                player2.score++;
+                                break;
                             case "Paper":
                                 Console.WriteLine("Lizard eats Paper");
                                 player1.score++;
                                 break;
+                            case "Scissors":
+                                Console.WriteLine("Scissors decapitates Lizard");
+                                player2.score++;
+                                break;
                             case "Spock":
                                 Console.WriteLine("Lizard poisons Spock");
                                 player1.score++;
+                                break;
+                            case "Lizard":
+                                Console.WriteLine("It's a tie!");
                                 break;
                             default:
                                 break;
@@ -118,114 +180,41 @@ namespace RPSLS
                     case "Spock":
                         switch (player2.ChosenGesture)
                         {
-                            case "Scissors":
-                                Console.WriteLine("Spock smashes Scissors");
-                                player1.score++;
-                                break;
                             case "Rock":
                                 Console.WriteLine("Spock vaporizes Rock");
                                 player1.score++;
                                 break;
-                            default:
-                                break;
-                        }
-
-
-                        switch (player2.ChosenGesture)
-                        {
-                            case "Rock":
-                                switch (player1.ChosenGesture)
-                                {
-                                    case "Lizard":
-                                        Console.WriteLine("Rock crushes Lizard");
-                                        player2.score++;
-                                        break;
-                                    case "Scissors":
-                                        Console.WriteLine("Rock crushes Scissors");
-                                        player2.score++;
-                                        break;
-                                    default:
-                                        break;
-                                }
-                                break;
                             case "Paper":
-                                switch (player1.ChosenGesture)
-                                {
-                                    case "Spock":
-                                        Console.WriteLine("Paper disproves Spock");
-                                        player2.score++;
-                                        break;
-                                    case "Rock":
-                                        Console.WriteLine("Paper covers Rock");
-                                        player2.score++;
-                                        break;
-                                    default:
-                                        break;
-                                }
+                                Console.WriteLine("Paper disproves Spock");
+                                player2.score++;
                                 break;
                             case "Scissors":
-                                switch (player1.ChosenGesture)
-                                {
-                                    case "Paper":
-                                        Console.WriteLine("Scissors cuts Paper");
-                                        player2.score++;
-                                        break;
-                                    case "Lizard":
-                                        Console.WriteLine("Scissors decapitates Lizard");
-                                        player2.score++;
-                                        break;
-                                    default:
-                                        break;
-                                }
+                                Console.WriteLine("Spock smashes Scissors");
+                                player1.score++;
                                 break;
                             case "Lizard":
-                                switch (player1.ChosenGesture)
-                                {
-                                    case "Paper":
-                                        Console.WriteLine("Lizard eats Paper");
-                                        player2.score++;
-                                        break;
-                                    case "Spock":
-                                        Console.WriteLine("Lizard poisons Spock");
-                                        player2.score++;
-                                        break;
-                                    default:
-                                        break;
-                                }
+                                Console.WriteLine("Lizard poisons Spock");
+                                player2.score++;
                                 break;
                             case "Spock":
-                                switch (player1.ChosenGesture)
-                                {
-                                    case "Scissors":
-                                        Console.WriteLine("Spock smashes Scissors");
-                                        player2.score++;
-                                        break;
-                                    case "Rock":
-                                        Console.WriteLine("Spock vaporizes Rock");
-                                        player2.score++;
-                                        break;
-                                    default:
-                                        break;
-                                }
+                                Console.WriteLine("It's a tie!");
                                 break;
                             default:
                                 break;
                         }
-
                         break;
                     default:
                         break;
                 }              
 
-            }          
-            
+            }                     
 
         }
         public void PlayAgain()
         {
             Console.WriteLine("Would you like to play again?");
             Console.WriteLine("1. Yes");
-            Console.WriteLine("2. No");
+            Console.WriteLine("2. No ");
             string response = Console.ReadLine();
             int playAgain = Convert.ToInt32(response);
             if (playAgain != 1)
