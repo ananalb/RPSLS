@@ -37,26 +37,28 @@ namespace RPSLS
                 Console.WriteLine("Welcome! Would you like to face off another human or a computer?");
                 Console.WriteLine("Press 1 for Human");
                 Console.WriteLine("Press 2 for Computer");
-                string input = Console.ReadLine();
+                string chosenOption = Console.ReadLine();
 
                 {
-                    switch (input)
+                    switch (chosenOption)
                     {
                         case "1":
                             player1 = new Human();
                             player2 = new Human();
+                            userSelection = false;
                             break;
 
                         case "2":
                             player1 = new Human();
                             player2 = new Computer();
+                            userSelection = false;
                             break;
                         default:
                             Console.WriteLine("Please try again and select an option");
                             break;
                     }
-
                 }
+
             }
         }
         public void DisplayRules()
